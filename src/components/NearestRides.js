@@ -43,7 +43,6 @@ const NearestRides = () => {
     <div>
         <NavBar/>
         <NavLinks/>
-        <p style={{color:'white'}}>Your Nearest Rides are coming soon</p> 
         <Rides rides={nearestRides}/> 
     </div>
   )
