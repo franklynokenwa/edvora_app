@@ -2,6 +2,10 @@ import {createGlobalStyle} from 'styled-components'
 
 
 const GlobalStyles = createGlobalStyle`
+ html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
     body{
         margin: 0;
         padding: 0;

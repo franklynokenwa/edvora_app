@@ -10,6 +10,9 @@ const StyledRide = styled.section`
     display: flex;
     justify-content: space-between;
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    justify-content: center;
 
     img{
         width:19rem;
@@ -37,7 +40,8 @@ const StyledRide = styled.section`
     }
     aside{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
+
     }
     aside p{
         background-color: #0A0A0A;
@@ -51,6 +55,48 @@ const StyledRide = styled.section`
         padding-left: 1rem;
         padding-right:1rem;
     }
+
+    @media only screen and (max-width: 768px){
+        section{
+        justify-content: space-evenly;
+        margin-left:-3rem ;
+    }
+    aside{
+        display: flex;
+        flex-direction:column ;
+        justify-content: flex-end;
+
+    }
+    aside p{
+        width:4rem ;
+        position: relative;
+        left:13.5rem ;
+    }
+}
+@media only screen and (max-width: 425px){
+        width:18rem ;
+        background-color:red ;
+        margin-left:1rem ;
+        margin-right:1rem ;
+        section{
+            flex-direction:column ;
+            margin-left:-1rem ;
+        }
+        img{
+            margin-bottom:1rem ;
+        }
+    
+    aside{
+    
+        justify-content: flex-start;
+
+    }
+    aside p{
+        width:4rem ;
+        position: relative;
+        left:-2rem ;
+    }
+}
 `
 
 export default StyledRide

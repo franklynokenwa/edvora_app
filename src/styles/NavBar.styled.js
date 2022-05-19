@@ -30,6 +30,13 @@ const StyledNavBar = styled.header `
         border-radius: 50px;
     }
 
+    @media only screen and (max-width: 425px){
+        background-color:red ;
+        display:flex ;
+        justify-content:space-between ;
+        
+    }
+
 `
 
 export default StyledNavBar

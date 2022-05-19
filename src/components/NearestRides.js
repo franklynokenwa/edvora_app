@@ -6,18 +6,16 @@ import Rides from './Rides'
 import ApiDataContext from './DataContext'
 import UserDataContext from './UserDataContext'
 
-
-
 const NearestRides = () => {
   const rideData = useContext(ApiDataContext);
   const userData = useContext(UserDataContext);
 
-  const NearestRides = rideData.filter((item) => {
-    let rideDateFromApi = item.station_path;
+  const nearestRides = rideData.filter((item) => {
+    let stationPathCodes = item.station_path;
     console.log(userData.station_code);
     const userStationCode = userData.station_code;
     
-    rideDateFromApi.sort((a, b) => {
+    stationPathCodes.sort((a, b) => {
         return Math.abs(userStationCode - a) - Math.abs(userStationCode - b);
     })
     
@@ -27,21 +25,26 @@ const NearestRides = () => {
   // })
 
     
-    console.log(rideDateFromApi[0]);
-    // const newArray = [];
-    // const value = newArray.push(rideDateFromApi[0]);
+    // console.log(typeof(stationPathCodes[0]));
+    const newArray = [];
+    newArray.push(stationPathCodes[0]);
     // console.log(newArray);
+    // console.log(typeof(newArray));
 
-    return rideDateFromApi[0] 
+    // const final= newArray.sort((a, b) => b-a);
+    // console.log(final);
+    console.log(newArray.sort((a, b) => a-b));
+
+    return newArray.sort((a, b) => a-b); 
   })  
 
-  console.log(rideData);
+  console.log(nearestRides);
   return (
     <div>
         <NavBar/>
         <NavLinks/>
         <p style={{color:'white'}}>Your Nearest Rides are coming soon</p> 
-        <Rides rides={NearestRides}/> 
+        <Rides rides={nearestRides}/> 
     </div>
   )
 }
